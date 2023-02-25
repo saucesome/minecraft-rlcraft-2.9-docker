@@ -6,7 +6,7 @@ services:
     container_name: rlcraft
     restart: always
     volumes:
-      - rlcraft_data:/rlcraft
+      - ./rlcraft_data:/rlcraft
     environment:
       - UID=${UID}
       - GID=${GID}
@@ -15,4 +15,3 @@ services:
       - "25565:25565"
 
 volumes:
-  rlcraft_data:
