@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  rlcraft:
+    image: openjdk:8-jre-slim
+    container_name: rlcraft
+    restart: always
+    volumes:
+      - rlcraft_data:/rlcraft
+    environment:
+      - UID=${UID}
+      - GID=${GID}
+    command: /bin/bash /rlcraft/entrypoint.sh
+    ports:
+      - "25565:25565"
+
+volumes:
+  rlcraft_data:
